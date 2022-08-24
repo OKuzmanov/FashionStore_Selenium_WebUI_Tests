@@ -7,33 +7,12 @@ using System;
 using System.Collections.ObjectModel;
 using System.Threading;
 using Webdriver_Automation_Tests.Pages;
+using Webdriver_Automation_Tests.Tests;
 
 namespace Webdriver_Automation_Tests
 {
-    public class DressPageTests
+    public class DressPageTests : BaseTests
     {
-        private IWebDriver Driver;
-        private WebDriverWait wait;
-
-        [OneTimeSetUp]
-        public void OnetimeSetup()
-        {
-            this.Driver = new ChromeDriver();
-            this.wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
-            this.Driver.Manage().Window.Maximize();
-        }
-
-        [OneTimeTearDown]
-        public void OneTimeTearDown()
-        {
-            this.Driver.Quit();
-        }
-
-        [SetUp]
-        public void deleteAllCookiesSetup()
-        {
-            this.Driver.Manage().Cookies.DeleteAllCookies();
-        }
 
         [Test, Order(1)]
         public void Test_MoreDetaialsButton_WorksCorrectly()
